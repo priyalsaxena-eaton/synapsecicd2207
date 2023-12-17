@@ -3,6 +3,9 @@ name: workspace_deployment
 on:
     push:
         branches: [workspace_publish]
+
+workflow_dispatch:
+ 
 jobs:
     release:
         # You also can use the self-hosted runners.
@@ -10,7 +13,9 @@ jobs:
         steps:
         # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it.
         - uses: actions/checkout@v2
-        - uses: azure/synapse-workspace-deployment@release-1.0
+        
+        - name: Synapse workspace deployment
+          uses: azure/synapse-workspace-deployment@release-1.0
         with:
           TargetWorkspaceName: 'synapseworkspace-prod-2207'
           TemplateFile: './synapsecicd2207/TemplateForWorkspace.json'
