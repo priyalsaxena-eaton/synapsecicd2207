@@ -20,8 +20,8 @@ jobs:
           with:
                       
            TargetWorkspaceName: 'synapseworkspace-prod-2207'
-           TemplateFile: './synapsecicd2207/TemplateForWorkspace.json'
-           ParametersFile: './synapsecicd2207/TemplateParametersForWorkspace.json'
+           TemplateFile: './synapseworkspace-dev-2207/TemplateForWorkspace.json'
+           ParametersFile: './synapseworkspace-dev-2207/TemplateParametersForWorkspace.json'
          # OverrideArmParameters: './path of the parameters.yaml'
            environment: 'Azure Public'
            resourceGroup: 'RG-Dev-2207'
